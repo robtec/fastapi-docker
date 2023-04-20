@@ -1,15 +1,13 @@
+FROM python:3.9-slim-buster
 
-FROM debian:bullseye-slim
+WORKDIR /app
 
-ENV DEBIAN_FRONTEND=noninteractive
+COPY requirements.txt .
 
-RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y \
-    wget vim && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY entrypoint.sh .
+COPY . .
 
-ENTRYPOINT ["./entrypoint.sh"]
+EXPOSE 8000
 
-CMD ["sleep","infinity"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
