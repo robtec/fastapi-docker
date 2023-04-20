@@ -1,13 +1,13 @@
-# X Docker
+# FastAPI Docker
 
-Docker container for X
+Docker container for a FastAPI app
 
 ## Setup
 
 
 Build the image
 ```
-docker build -t x-image .
+docker build -t fastapi-image .
 ```
 
 ## Running
