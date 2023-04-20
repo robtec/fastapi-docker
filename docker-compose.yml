@@ -1,13 +1,13 @@
 version: "3.9"
 
 services:
-  x-app:
+  fastapi-app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: x-image
-    container_name: x-service
+    image: fastapi-image
+    container_name: fastapi-service
     ports:
-      - 25:25
+      - 8000:8000
     environment:
       KEY: var
