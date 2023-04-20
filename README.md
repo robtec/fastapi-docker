@@ -18,9 +18,10 @@ docker compose up -d --build
 
 # docker
 
-docker run ...
+docker run -p 8000:8000 fastapi-image
 ```
 
 ## Docs
 
+- FastAPI Docs - https://fastapi.tiangolo.com/tutorial/first-steps/
 - Github Actions - https://docs.docker.com/build/ci/github-actions/examples/
